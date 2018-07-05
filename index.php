@@ -28,11 +28,11 @@
 //     }
 
 // }
-$link = mysqli_connect('localhost', 'root', 'root', 'novel');
-// $sql = "select * from address limit 300";
-$sql = "select * from address";
-$r = mysqli_query($link,$sql);
-$arr = mysqli_fetch_all($r,MYSQLI_ASSOC);
+// $link = mysqli_connect('localhost', 'root', 'root', 'novel');
+// // $sql = "select * from address limit 300";
+// $sql = "select * from address";
+// $r = mysqli_query($link,$sql);
+// $arr = mysqli_fetch_all($r,MYSQLI_ASSOC);
 // print_r($arr);
 // $arr = [];
 //递归实现(网上复制的)
@@ -54,3 +54,10 @@ $arr = mysqli_fetch_all($r,MYSQLI_ASSOC);
 // echo $tree;
 
 //Recursion
+
+$code = '';
+for($i=1;$i<=6;$i++){
+    $code .= chr(rand(97,122));
+}
+echo strtoupper($code);
+
