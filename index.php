@@ -1,5 +1,4 @@
 <?php
-
 // $link = mysqli_connect('localhost', 'root', 'root', 'novel');
 // // $sql = "set names utf8";
 // // mysqli_query($link,$sql);
@@ -55,9 +54,29 @@
 
 //Recursion
 
-$code = '';
-for($i=1;$i<=6;$i++){
-    $code .= chr(rand(97,122));
-}
-echo strtoupper($code);
+// $code = '';
+// for($i=1;$i<=6;$i++){
+//     $code .= chr(rand(97,122));
+// }
+// echo strtoupper($code);
+// $mem = new Memcache;
+// $mem->connect('192.168.8.200',11211);
+// $mem->set('aa','lovefailure');
+// echo $mem->get('aa');
+//实例化redis
+ $redis = new Redis();
+ //连接
+ $redis->connect('192.168.8.200', 6379);
+ //检测是否连接成功
+//  echo "Server is running: " . $redis->ping();
+ // 输出结果 Server is running: +PONG   
+ // 设置一个字符串的值
+ $redis->set('cat', 111);
+
+ //获取一个字符串的值
+ echo $redis->get('cat'); // 111
+
+ // 重复set
+ $redis->set('cat', 222);
+ echo $redis->get('cat'); // 222
 
